@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>data_1004_winter_2006_test_2_review</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Data_1004_Winter_2006_Test_2_Review_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Data_1004_Winter_2006_Test_2_Review_files/libs/quarto-html/quarto.js"></script>
+<script src="Data_1004_Winter_2006_Test_2_Review_files/libs/quarto-html/popper.min.js"></script>
+<script src="Data_1004_Winter_2006_Test_2_Review_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Data_1004_Winter_2006_Test_2_Review_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Data_1004_Winter_2006_Test_2_Review_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Data_1004_Winter_2006_Test_2_Review_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Data_1004_Winter_2006_Test_2_Review_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Data_1004_Winter_2006_Test_2_Review_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Data_1004_Winter_2006_Test_2_Review_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#test-assessment-2-review" id="toc-test-assessment-2-review" class="nav-link active" data-scroll-target="#test-assessment-2-review">Test / Assessment 2 Review</a>
+  <ul>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting Up</a>
+  <ul>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load Packages</a></li>
+  <li><a href="#get-data" id="toc-get-data" class="nav-link" data-scroll-target="#get-data">Get Data</a></li>
+  <li><a href="#clean-data" id="toc-clean-data" class="nav-link" data-scroll-target="#clean-data">Clean Data</a></li>
+  </ul></li>
+  <li><a href="#elementary-data-analysis-eda" id="toc-elementary-data-analysis-eda" class="nav-link" data-scroll-target="#elementary-data-analysis-eda">Elementary Data Analysis (EDA)</a>
+  <ul>
+  <li><a href="#measures-of-central-tendencies" id="toc-measures-of-central-tendencies" class="nav-link" data-scroll-target="#measures-of-central-tendencies">Measures of Central Tendencies</a></li>
+  <li><a href="#measures-of-variability" id="toc-measures-of-variability" class="nav-link" data-scroll-target="#measures-of-variability">Measures of Variability</a></li>
+  <li><a href="#outliers" id="toc-outliers" class="nav-link" data-scroll-target="#outliers">Outliers</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a>
+  <ul class="collapse">
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram">Histogram</a></li>
+  <li><a href="#barplot" id="toc-barplot" class="nav-link" data-scroll-target="#barplot">Barplot</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot">Boxplot</a></li>
+  <li><a href="#scatterplot" id="toc-scatterplot" class="nav-link" data-scroll-target="#scatterplot">Scatterplot</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems">Practice Problems</a>
+  <ul>
+  <li><a href="#mean-median-practice" id="toc-mean-median-practice" class="nav-link" data-scroll-target="#mean-median-practice">Mean, Median Practice</a></li>
+  <li><a href="#number-summary-and-outlier-practice" id="toc-number-summary-and-outlier-practice" class="nav-link" data-scroll-target="#number-summary-and-outlier-practice">5-Number summary and Outlier Practice</a></li>
+  <li><a href="#variance-and-standard-deviation-practice" id="toc-variance-and-standard-deviation-practice" class="nav-link" data-scroll-target="#variance-and-standard-deviation-practice">Variance and Standard Deviation Practice</a></li>
+  <li><a href="#histogram-practice" id="toc-histogram-practice" class="nav-link" data-scroll-target="#histogram-practice">Histogram Practice</a></li>
+  <li><a href="#barplot-practice" id="toc-barplot-practice" class="nav-link" data-scroll-target="#barplot-practice">Barplot Practice</a></li>
+  <li><a href="#boxplot-practice" id="toc-boxplot-practice" class="nav-link" data-scroll-target="#boxplot-practice">Boxplot Practice</a></li>
+  <li><a href="#scatterplot-practice" id="toc-scatterplot-practice" class="nav-link" data-scroll-target="#scatterplot-practice">Scatterplot Practice</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content" id="quarto-document-content">
+
+
+
+
+<center>
+<section id="test-assessment-2-review" class="level1 unnumbered">
+<h1 class="unnumbered">Test / Assessment 2 Review</h1>
+</section></center>
+<p><br>Since out last assessment, we have started down the path of <strong>Elementary Data Analysis</strong>. We have worked through the following concepts:</p>
+<ul>
+<li>Measures of Central Tendencies : mean, median</li>
+<li>Measures of Variability : range, variance, standard deviation, 5-number summary, outliers</li>
+<li>Data Visualization : histograms, barplots, boxplots, scatterplots</li>
+</ul>
+<section id="setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up">Setting Up</h2>
+<section id="load-packages" class="level3">
+<h3 class="anchored" data-anchor-id="load-packages">Load Packages</h3>
+<p>The first step we want to do is to get our project ready to use. Let’s load up the packages we will need for this review. We will be using the <code>tidyverse</code> package which includes <code>dplyr</code> and <code>ggplot2</code> for data manipulation and visualization.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse") # Uncomment this line, if needed</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># For data cleaning, we want to load the dplyr package</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># For data visualization, we want to load the ggplot2 package</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="get-data" class="level3">
+<h3 class="anchored" data-anchor-id="get-data">Get Data</h3>
+<p>For this review, we will be using data from the WNBA. This data can be found here : <br></p>
+<p>https://github.com/fivethirtyeight/WNBA-stats/blob/master/wnba-player-stats.csv</p>
+<ul>
+<li>Download the file and save it as “WNBA_Data.csv”</li>
+<li>Create a data directory in your project and save the file there</li>
+<li>Use the <code>read_csv()</code> command to read the data into R and save it as a variable called <code>wnba_data</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the readr package to read in the data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the data and save it as a variable called wnba_data</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>wnba_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/WNBA_Data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, review the data to see what you can find out about the variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the head() command to look at the first few rows of the data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wnba_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 28
+  player_ID  Player      year_ID   Age Tm    tm_gms Tm_Net_Rtg Pos       G    MP
+  &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 montgre01w Renee Mont…    2019    32 ATL       34       -9.8 G        34   949
+2 williel01w Elizabeth …    2019    26 ATL       34       -9.8 C-F      32   909
+3 sykesbr01w Brittney S…    2019    25 ATL       34       -9.8 G        34   880
+4 hayesti01w Tiffany Ha…    2019    29 ATL       34       -9.8 G        29   817
+5 brelaje01w Jessica Br…    2019    31 ATL       34       -9.8 F        33   767
+6 bentlal01w Alex Bentl…    2019    28 ATL       34       -9.8 G        29   634
+# ℹ 18 more variables: MP_pct &lt;chr&gt;, PER &lt;dbl&gt;, TS_pct &lt;dbl&gt;, ThrPAr &lt;dbl&gt;,
+#   FTr &lt;dbl&gt;, ORB_pct &lt;dbl&gt;, TRB_pct &lt;dbl&gt;, AST_pct &lt;dbl&gt;, STL_pct &lt;dbl&gt;,
+#   BLK_pct &lt;dbl&gt;, TOV_pct &lt;dbl&gt;, USG_pct &lt;dbl&gt;, OWS &lt;dbl&gt;, DWS &lt;dbl&gt;,
+#   WS &lt;dbl&gt;, WS40 &lt;dbl&gt;, Composite_Rating &lt;dbl&gt;, Wins_Generated &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the names() command to look at the variable names</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wnba_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "player_ID"        "Player"           "year_ID"          "Age"             
+ [5] "Tm"               "tm_gms"           "Tm_Net_Rtg"       "Pos"             
+ [9] "G"                "MP"               "MP_pct"           "PER"             
+[13] "TS_pct"           "ThrPAr"           "FTr"              "ORB_pct"         
+[17] "TRB_pct"          "AST_pct"          "STL_pct"          "BLK_pct"         
+[21] "TOV_pct"          "USG_pct"          "OWS"              "DWS"             
+[25] "WS"               "WS40"             "Composite_Rating" "Wins_Generated"  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the str() command to look at the structure of the data</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(wnba_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [3,883 × 28] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ player_ID       : chr [1:3883] "montgre01w" "williel01w" "sykesbr01w" "hayesti01w" ...
+ $ Player          : chr [1:3883] "Renee Montgomery" "Elizabeth Williams" "Brittney Sykes" "Tiffany Hayes" ...
+ $ year_ID         : num [1:3883] 2019 2019 2019 2019 2019 ...
+ $ Age             : num [1:3883] 32 26 25 29 31 28 23 22 24 25 ...
+ $ Tm              : chr [1:3883] "ATL" "ATL" "ATL" "ATL" ...
+ $ tm_gms          : num [1:3883] 34 34 34 34 34 34 34 34 34 34 ...
+ $ Tm_Net_Rtg      : num [1:3883] -9.8 -9.8 -9.8 -9.8 -9.8 -9.8 -9.8 -9.8 -9.8 -9.8 ...
+ $ Pos             : chr [1:3883] "G" "C-F" "G" "G" ...
+ $ G               : num [1:3883] 34 32 34 29 33 29 29 31 28 31 ...
+ $ MP              : num [1:3883] 949 909 880 817 767 634 553 477 389 349 ...
+ $ MP_pct          : chr [1:3883] "69.5%" "66.6%" "64.5%" "59.9%" ...
+ $ PER             : num [1:3883] 11.1 16.7 11.3 15.1 15.2 8.8 11.7 6.4 10.1 8.8 ...
+ $ TS_pct          : num [1:3883] 0.52 0.521 0.445 0.497 0.425 0.384 0.469 0.444 0.441 0.433 ...
+ $ ThrPAr          : num [1:3883] 0.727 0 0.308 0.313 0.138 0.421 0.007 0.591 0.417 0.231 ...
+ $ FTr             : num [1:3883] 0.176 0.477 0.259 0.34 0.12 0.108 0.417 0.258 0.302 0.204 ...
+ $ ORB_pct         : num [1:3883] 1 11.4 3 2.7 5.7 1.6 11.5 0.4 6.2 10.5 ...
+ $ TRB_pct         : num [1:3883] 4.1 12.1 9.1 5.7 16.6 4.5 19.3 2.3 10.6 12.9 ...
+ $ AST_pct         : num [1:3883] 18 7.8 19.6 21.9 14.2 28.1 5.4 17.8 6 10.3 ...
+ $ STL_pct         : num [1:3883] 1.7 1.4 1.2 1.8 2.8 1.7 1.6 1.9 1.9 0.7 ...
+ $ BLK_pct         : num [1:3883] 0.5 4.7 1.5 0.8 3.6 1.1 1.7 0.2 2.7 5.5 ...
+ $ TOV_pct         : num [1:3883] 16.8 12.9 14.8 14 11.6 11.5 21.3 21.9 11.8 21.4 ...
+ $ USG_pct         : num [1:3883] 17.5 15.9 23.1 27.1 18.9 26.7 17.3 12.3 20.3 19 ...
+ $ OWS             : num [1:3883] 0.4 1.6 -0.8 0.5 -0.4 -1.4 -0.3 -0.4 -0.3 -0.5 ...
+ $ DWS             : num [1:3883] 0.5 1 0.8 0.6 1.9 0.4 1 0.2 0.5 0.4 ...
+ $ WS              : num [1:3883] 0.9 2.7 0 1 1.5 -1 0.7 -0.2 0.2 -0.1 ...
+ $ WS40            : num [1:3883] 0.039 0.117 -0.001 0.05 0.076 -0.063 0.049 -0.014 0.02 -0.015 ...
+ $ Composite_Rating: num [1:3883] -2.4 0.6 -3.4 -1.5 -0.8 -5.5 -2.1 -4.6 -3.1 -4.2 ...
+ $ Wins_Generated  : num [1:3883] 1.22 2.51 0.7 1.45 1.62 -0.14 0.81 0.1 0.37 0.14 ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   player_ID = col_character(),
+  ..   Player = col_character(),
+  ..   year_ID = col_double(),
+  ..   Age = col_double(),
+  ..   Tm = col_character(),
+  ..   tm_gms = col_double(),
+  ..   Tm_Net_Rtg = col_double(),
+  ..   Pos = col_character(),
+  ..   G = col_double(),
+  ..   MP = col_double(),
+  ..   MP_pct = col_character(),
+  ..   PER = col_double(),
+  ..   TS_pct = col_double(),
+  ..   ThrPAr = col_double(),
+  ..   FTr = col_double(),
+  ..   ORB_pct = col_double(),
+  ..   TRB_pct = col_double(),
+  ..   AST_pct = col_double(),
+  ..   STL_pct = col_double(),
+  ..   BLK_pct = col_double(),
+  ..   TOV_pct = col_double(),
+  ..   USG_pct = col_double(),
+  ..   OWS = col_double(),
+  ..   DWS = col_double(),
+  ..   WS = col_double(),
+  ..   WS40 = col_double(),
+  ..   Composite_Rating = col_double(),
+  ..   Wins_Generated = col_double()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+</section>
+<section id="clean-data" class="level3">
+<h3 class="anchored" data-anchor-id="clean-data">Clean Data</h3>
+<p>Let’s examine the data a bit. We are going to analyze the <strong>Age</strong> variable. Let’s look at some of the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the minimum age of the players in the data?</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(wnba_data<span class="sc">$</span>Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1</code></pre>
+</div>
+</div>
+<p>Clearly there are some data entry errors. We will need to clean this data before we can do any analysis.</p>
+<p>What is the maximum age of the players in the data?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the max() command to find the maximum age of the players in the data</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(wnba_data<span class="sc">$</span>Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 49</code></pre>
+</div>
+</div>
+<p>49 is not a reasonable age for a WNBA player. Doing a Google search shows that the oldest WNBA player in 2025 was Alysha Clark at 38 years old.</p>
+<p>We can use the table() command to show the frequency of each age in the data. This will help us to identify any other possible data entry errors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wnba_data<span class="sc">$</span>Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ -1   0  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36 
+  1   6   9  14 152 477 487 417 373 351 291 261 212 191 171 138 102  80  57  36 
+ 37  38  39  40  41  49 
+ 26  16   9   4   1   1 </code></pre>
+</div>
+</div>
+<p>We can see that there are several players that may have the wrong age. We will need to clean this data before we can do any analysis. Let’s examine which players are under 19 years old and which players are 40 years old and older. We can use the filter() command to do this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the filter() command to find all players that are under 19 years old and</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 40 years old and older. Save the result to "Sus_Ages"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>Sus_Ages <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Age <span class="sc">&lt;</span> <span class="dv">19</span> <span class="sc">|</span> Age <span class="sc">&gt;=</span> <span class="dv">40</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print out the result</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>Sus_Ages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 28
+   player_ID  Player     year_ID   Age Tm    tm_gms Tm_Net_Rtg Pos       G    MP
+   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 carlebr01w Bridget C…    2019     0 CON       34        3.7 &lt;NA&gt;      4    29
+ 2 alleyji01w Jillian A…    2019     0 MIN       34        3.1 &lt;NA&gt;      5    14
+ 3 carlebr01w Bridget C…    2019     0 MIN       34        3.1 &lt;NA&gt;      4    11
+ 4 johanma01w Marine Jo…    2019     0 NYL       34       -9.2 &lt;NA&gt;     19   345
+ 5 cartear01w Arica Car…    2019     0 PHO       34       -1.4 &lt;NA&gt;      6    24
+ 6 howaran01w Anriel Ho…    2019     0 SEA       34       -0.4 &lt;NA&gt;      3    20
+ 7 miltode01w DeLisha M…    2015    40 ATL       34       -2.5 F        18   161
+ 8 mcwilta01w Taj McWil…    2012    41 MIN       34       12.5 F-C      33   879
+ 9 mcwilta01w Taj McWil…    2011    40 MIN       34       10.4 F-C      34   966
+10 swoopsh01w Sheryl Sw…    2011    40 TUL       34      -16.9 F-G      33   879
+11 liebena01w Nancy Lie…    2008    49 DET       34        5.7 G         1     9
+12 coopecy01w Cynthia C…    2003    40 HOU       34        4.5 G         4   144
+13 domonna01w Nadine Do…    1998    -1 SAC       30       -7.6 G         9    92
+# ℹ 18 more variables: MP_pct &lt;chr&gt;, PER &lt;dbl&gt;, TS_pct &lt;dbl&gt;, ThrPAr &lt;dbl&gt;,
+#   FTr &lt;dbl&gt;, ORB_pct &lt;dbl&gt;, TRB_pct &lt;dbl&gt;, AST_pct &lt;dbl&gt;, STL_pct &lt;dbl&gt;,
+#   BLK_pct &lt;dbl&gt;, TOV_pct &lt;dbl&gt;, USG_pct &lt;dbl&gt;, OWS &lt;dbl&gt;, DWS &lt;dbl&gt;,
+#   WS &lt;dbl&gt;, WS40 &lt;dbl&gt;, Composite_Rating &lt;dbl&gt;, Wins_Generated &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>At this point we have to decide if we want to remove these players or if we want to correct the error. If we want to remove these players, we can use the filter() command again to filter the data to only include players that are between 19 and 39 years old.</p>
+<p>However, if we want to correct the error, we will need to do some research to find out the correct ages of these players. We can use the Google search to find out the correct ages of these players. Once we have the correct ages, we can use the mutate() command to update the age variable for these players.</p>
+<p>Here are the correct ages for the players in their respective years :</p>
+<ul>
+<li>Bridget Carleton - 22 years old in 2019</li>
+<li>Jillian Alleyne - 24 years old in 2019</li>
+<li>Marine Johannes - 24 years old in 2019</li>
+<li>Arica Carter - 22 years old in 2019</li>
+<li>Anriel Howard - 22 years old in 2019</li>
+<li>Nadine Domond - 22 years old in 1998</li>
+</ul>
+<p>There are several ways to do this. We can do it one at a time, or we can do it all at once using the case_when() command. Let’s start by doing it one at a time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the rows has Bridget Carleton in the data.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>Bridget_Row <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Player <span class="sc">==</span> <span class="st">"Bridget Carleton"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>Bridget_Row</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 28
+  player_ID  Player      year_ID   Age Tm    tm_gms Tm_Net_Rtg Pos       G    MP
+  &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 carlebr01w Bridget Ca…    2019     0 CON       34        3.7 &lt;NA&gt;      4    29
+2 carlebr01w Bridget Ca…    2019     0 MIN       34        3.1 &lt;NA&gt;      4    11
+# ℹ 18 more variables: MP_pct &lt;chr&gt;, PER &lt;dbl&gt;, TS_pct &lt;dbl&gt;, ThrPAr &lt;dbl&gt;,
+#   FTr &lt;dbl&gt;, ORB_pct &lt;dbl&gt;, TRB_pct &lt;dbl&gt;, AST_pct &lt;dbl&gt;, STL_pct &lt;dbl&gt;,
+#   BLK_pct &lt;dbl&gt;, TOV_pct &lt;dbl&gt;, USG_pct &lt;dbl&gt;, OWS &lt;dbl&gt;, DWS &lt;dbl&gt;,
+#   WS &lt;dbl&gt;, WS40 &lt;dbl&gt;, Composite_Rating &lt;dbl&gt;, Wins_Generated &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>From this output, it looks like Bridget Carleton is listed twice. Let’s find the rows where she is listed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the row numbers where Bridget Carleton is listed in the data?</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(wnba_data<span class="sc">$</span>Player <span class="sc">==</span> <span class="st">"Bridget Carleton"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  41 111</code></pre>
+</div>
+</div>
+<p>This tells us that Bridget Carleton is listed in rows 41 and 111. You can verify this by looking at the data frame. How can we correct these errors?</p>
+<p>Here is the direct way to change the age variable for these rows. We can use the indexing operator to change the age variable for these rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>wnba_data<span class="sc">$</span>Age[<span class="dv">41</span>] <span class="ot">&lt;-</span> <span class="dv">22</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>wnba_data<span class="sc">$</span>Age[<span class="dv">111</span>] <span class="ot">&lt;-</span> <span class="dv">22</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can now do the same for the rest of the players that have the wrong age. Note that this is not very efficient. If we have a very large data frame, this method would be very time consuming. The Data 2 class will go over more efficient ways to do this.</p>
+<p>Here is how we could finish off cleaning the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Jillian Alleyne - 24 years old in 2019</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(wnba_data<span class="sc">$</span>Player <span class="sc">==</span> <span class="st">"Jillian Alleyne"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 109</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This error occurs in row 109</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>wnba_data<span class="sc">$</span>Age[<span class="dv">109</span>] <span class="ot">&lt;-</span> <span class="dv">24</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="do">###################</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Marine Johannes - 24 years old in 2019</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(wnba_data<span class="sc">$</span>Player <span class="sc">==</span> <span class="st">"Marine Johannes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 122</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This error occurs in row 122</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>wnba_data<span class="sc">$</span>Age[<span class="dv">122</span>] <span class="ot">&lt;-</span> <span class="dv">24</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="do">###################</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Arica Carter - 22 years old in 2019</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(wnba_data<span class="sc">$</span>Player <span class="sc">==</span> <span class="st">"Arica Carter"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 139</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This error occurs in row 139</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>wnba_data<span class="sc">$</span>Age[<span class="dv">139</span>] <span class="ot">&lt;-</span> <span class="dv">22</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="do">###################</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Anriel Howard - 22 years old in 2019 ######</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(wnba_data<span class="sc">$</span>Player <span class="sc">==</span> <span class="st">"Anriel Howard"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 151</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This error occurs in row 151</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>wnba_data<span class="sc">$</span>Age[<span class="dv">151</span>] <span class="ot">&lt;-</span> <span class="dv">22</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="do">###################</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Nadine Domond - 22 years old in 1998</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(wnba_data<span class="sc">$</span>Player <span class="sc">==</span> <span class="st">"Nadine Domond"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3755</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This error occurs in row 3755</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>wnba_data<span class="sc">$</span>Age[<span class="dv">3755</span>] <span class="ot">&lt;-</span> <span class="dv">22</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s run the <strong>table()</strong> command again to see if we have cleaned the data correctly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wnba_data<span class="sc">$</span>Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ 19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38 
+  9  14 152 482 487 419 373 351 291 261 212 191 171 138 102  80  57  36  26  16 
+ 39  40  41  49 
+  9   4   1   1 </code></pre>
+</div>
+</div>
+<p>This certainly looks better. Let’s assume the rest is OK and we will move on.</p>
+<p>Now that we have the data loaded and ready to go, we can begin exploring the data and doing some analysis.</p>
+</section>
+</section>
+<section id="elementary-data-analysis-eda" class="level2">
+<h2 class="anchored" data-anchor-id="elementary-data-analysis-eda">Elementary Data Analysis (EDA)</h2>
+<section id="measures-of-central-tendencies" class="level3">
+<h3 class="anchored" data-anchor-id="measures-of-central-tendencies">Measures of Central Tendencies</h3>
+<p>Let’s start by doing some exploratory data analysis (EDA) on the WNBA data. We will begin by looking at some <strong>descriptive statistics</strong>. These are measures that summarize the data and give us a sense of the central tendencies and variability of the data. We will look at the mean, median, range, variance, standard deviation, and 5-number summary for some of the variables in the data.</p>
+<p>There are several ways to do this. We can calcuate them one at a time, and there are also commands that will give us all of these statistics at once. Let’s start by calculating them one at a time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of the age variable and save the result to a variable called mean_age</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>mean_age <span class="ot">&lt;-</span> <span class="fu">mean</span>(wnba_data<span class="sc">$</span>Age)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>mean_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26.33608</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We could also do this using piping. Recall the summarise command is used to calculate </span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary statistics. We can use it to calculate the mean of the age variable like this:</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>mean_age2 <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age2 =</span> <span class="fu">mean</span>(Age))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that the summarise command returns a data frame with the summary statistic. </span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>mean_age2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_age2
+      &lt;dbl&gt;
+1      26.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If we want to just get the value of the mean, we can use the pull() command like this:</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>mean_age3 <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age2 =</span> <span class="fu">mean</span>(Age)) <span class="sc">%&gt;%</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(mean_age2)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>mean_age3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26.33608</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the median of the age variable</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mode of the age variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What happens if we try to find the mean of the PER variable?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of the PER variable</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>mean_per <span class="ot">&lt;-</span> <span class="fu">mean</span>(wnba_data<span class="sc">$</span>PER)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>mean_per</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>Remeber that this tells us that there are missing values in the PER variable. We can use the <code>na.rm = TRUE</code> argument to ignore the missing values and calculate the mean of the PER variable like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the mean of the PER variable while ignoring the missing values</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>mean_per2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(wnba_data<span class="sc">$</span>PER, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>mean_per2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11.91573</code></pre>
+</div>
+</div>
+<p>If we want to calculate the median, we can use the <code>median()</code> command.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the median of the age variable and save the result to a variable called median_age</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>median_age <span class="ot">&lt;-</span> <span class="fu">median</span>(wnba_data<span class="sc">$</span>Age)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>median_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We could also do this using piping. Recall the summarise command is used to calculate</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary statistics. We can use it to calculate the median of the age variable like this:</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>median_age2 <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">median_age2 =</span> <span class="fu">median</span>(Age)) <span class="sc">%&gt;%</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(median_age2)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>median_age2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 26</code></pre>
+</div>
+</div>
+<p>At this point we can talk about what it means if the mean and median have different values.</p>
+<ul>
+<li>If the mean is greater than the median, then the distribution is right-skewed (positively skewed)
+<ul>
+<li>This means that there are some higher values on the right side of the distribution that are pulling the mean up. They might be possible high outliers.</li>
+</ul></li>
+<li>If the mean is less than the median, then the distribution is left-skewed (negatively skewed)
+<ul>
+<li>This means that there are some lower values on the left side of the distribution that are pulling the mean down. They might be possible low outliers.</li>
+</ul></li>
+</ul>
+<p>If we want to calculate the mode, we can use the <code>table()</code> function to help :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the table() command to calculate the frequency of each age in the data. </span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This will help us to identify the mode.</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wnba_data<span class="sc">$</span>Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ 19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38 
+  9  14 152 482 487 419 373 351 291 261 212 191 171 138 102  80  57  36  26  16 
+ 39  40  41  49 
+  9   4   1   1 </code></pre>
+</div>
+</div>
+<p>We can see from the output that the most common age is 23 and it occurs 487 times. How could we pull this out of the table() output?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The max() command can be used to find the maximum value in a vector. We can use it to find the mode like this:</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>most_common_age_count <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">table</span>(wnba_data<span class="sc">$</span>Age))</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>most_common_age_count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 487</code></pre>
+</div>
+</div>
+<p>We can then use this value to find the age that corresponds to this frequency. We can use the <code>which()</code>, ’names()<code>and</code>table()` commands to do this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">table</span>(wnba_data<span class="sc">$</span>Age))[<span class="fu">which</span>(<span class="fu">table</span>(wnba_data<span class="sc">$</span>Age) <span class="sc">==</span> most_common_age_count)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "23"</code></pre>
+</div>
+</div>
+<p>There really needs to be an easier way to find the mode!</p>
+</section>
+<section id="measures-of-variability" class="level3">
+<h3 class="anchored" data-anchor-id="measures-of-variability">Measures of Variability</h3>
+<p>We can also calculate measures of variability. These are measures that summarize the spread of the data. We will look at the range, variance, standard deviation, and 5-number summary for some of the variables in the data.</p>
+<p>The first measure we will examine is the range. The range is the difference between the maximum and minimum values in the data. We can calculate it like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the range of the age variable and save the result to a variable called age_range</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>age_range <span class="ot">&lt;-</span> <span class="fu">max</span>(wnba_data<span class="sc">$</span>Age) <span class="sc">-</span> <span class="fu">min</span>(wnba_data<span class="sc">$</span>Age)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>age_range</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 30</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We could also do this using piping. Recall the summarise command is used to calculate</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary statistics. We can use it to calculate the range of the age variable like this:</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>age_range2 <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">age_range2 =</span> <span class="fu">max</span>(Age) <span class="sc">-</span> <span class="fu">min</span>(Age)) <span class="sc">%&gt;%</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(age_range2)</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>age_range2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 30</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the range() command to show the actual low and high values : </span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>age_range3 <span class="ot">&lt;-</span> <span class="fu">range</span>(wnba_data<span class="sc">$</span>Age)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>age_range3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19 49</code></pre>
+</div>
+</div>
+<p>If we are using the mean as the measure of central tendency, then we should use the variance or standard deviation as the measure of variability. Here is how we can calculate the variance and standard deviation of the age variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the variance of the age variable and save the result to a variable called age_variance</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>age_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(wnba_data<span class="sc">$</span>Age)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>age_variance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15.67141</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the standard deviation of the age variable and save the result to a variable called age_sd</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>age_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(wnba_data<span class="sc">$</span>Age)</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>age_sd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.958713</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We could also do this using piping. Recall the summarise command is used to calculate</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary statistics. We can use it to calculate the variance and standard deviation of </span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co"># the age variable</span></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>age_variance_sd <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">age_variance =</span> <span class="fu">var</span>(Age), <span class="at">age_sd =</span> <span class="fu">sd</span>(Age))</span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>age_variance_sd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  age_variance age_sd
+         &lt;dbl&gt;  &lt;dbl&gt;
+1         15.7   3.96</code></pre>
+</div>
+</div>
+<p>We can interpret these values as follows :</p>
+<ul>
+<li>The variance is the average of the squared deviations from the mean. It gives us a sense of how much the data is spread out around the mean. A higher variance indicates that the data is more spread out, while a lower variance indicates that the data is more clustered around the mean.</li>
+<li>The standard deviation is the square root of the variance. <strong>It is in the same units as the original data, which makes it easier to interpret.</strong> A higher standard deviation indicates that the data is more spread out, while a lower standard deviation indicates that the data is more clustered around the mean.</li>
+</ul>
+<p>Finally, we can calculate the 5-number summary of the age variable. The 5-number summary consists of the minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum values of the data. We can calculate it like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the 5-number summary of the age variable and save the result </span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="co"># to a variable called age_5num</span></span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>age_5num <span class="ot">&lt;-</span> <span class="fu">fivenum</span>(wnba_data<span class="sc">$</span>Age)</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>age_5num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19 23 26 29 49</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We could also do this using piping. Recall the summarise command is </span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="co"># used to calculate summary statistics. We can use it to calculate the </span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 5-number summary of the age variable</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>age_5num2 <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">age_5num =</span> <span class="fu">fivenum</span>(Age)) <span class="sc">%&gt;%</span></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(age_5num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in
+dplyr 1.1.0.
+ℹ Please use `reframe()` instead.
+ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()`
+  always returns an ungrouped data frame and adjust accordingly.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>age_5num2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19 23 26 29 49</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The summary() command can also be used to calculate the 5-number </span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary along with the mean and median.</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>age_summary <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">age_summary =</span> <span class="fu">summary</span>(Age)) <span class="sc">%&gt;%</span></span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(age_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in
+dplyr 1.1.0.
+ℹ Please use `reframe()` instead.
+ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()`
+  always returns an ungrouped data frame and adjust accordingly.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>age_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+19.00000 23.00000 26.00000 26.33608 29.00000 49.00000 </code></pre>
+</div>
+</div>
+</section>
+<section id="outliers" class="level3">
+<h3 class="anchored" data-anchor-id="outliers">Outliers</h3>
+<p>Outliers are values that are significantly different from the rest of the data. They can be caused by data entry errors, measurement errors, or they can be true values that are just very different from the rest of the data.</p>
+<p>We can identify outliers using the %-number summary and the 1.5*IQR rule.</p>
+<p>To identify outliers we need to :</p>
+<ul>
+<li>Calculate the 5-Number summary</li>
+<li>Calculate the IQR (Interquartile Range) which is Q3 - Q1</li>
+<li>Calculate the lower bound which is Q1 - 1.5*IQR</li>
+<li>Calculate the upper bound which is Q3 + 1.5*IQR</li>
+</ul>
+<p>Any values that are less than the lower bound or greater than the upper bound are considered outliers.</p>
+<p>Are there outliers in the Age variable?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine if there are outliers in the age variable.</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the 5-number summary of the age variable</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>age_5num <span class="ot">&lt;-</span> <span class="fu">fivenum</span>(wnba_data<span class="sc">$</span>Age)</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>age_5num</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19 23 26 29 49</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the IQR (Interquartile Range)</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>age_IQR <span class="ot">&lt;-</span> age_5num[<span class="dv">4</span>] <span class="sc">-</span> age_5num[<span class="dv">2</span>]</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>age_IQR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the lower bound</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>age_lower_bound <span class="ot">&lt;-</span> age_5num[<span class="dv">2</span>] <span class="sc">-</span> <span class="fl">1.5</span><span class="sc">*</span>age_IQR</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>age_lower_bound</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the upper bound</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>age_upper_bound <span class="ot">&lt;-</span> age_5num[<span class="dv">4</span>] <span class="sc">+</span> <span class="fl">1.5</span><span class="sc">*</span>age_IQR</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>age_upper_bound</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 38</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify any values that are less than the lower bound or greater than the upper bound</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> wnba_data <span class="sc">%&gt;%</span></span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Age <span class="sc">&lt;</span> age_lower_bound <span class="sc">|</span> Age <span class="sc">&gt;</span> age_upper_bound)</span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>outliers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 28
+   player_ID  Player     year_ID   Age Tm    tm_gms Tm_Net_Rtg Pos       G    MP
+   &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 miltode01w DeLisha M…    2015    40 ATL       34       -2.5 F        18   161
+ 2 miltode01w DeLisha M…    2014    39 ATL       34        2.5 F         2    23
+ 3 miltode01w DeLisha M…    2014    39 NYL       34       -4   F        19   320
+ 4 smithka01w Katie Smi…    2013    39 NYL       34       -9.6 G        34   904
+ 5 mcwilta01w Taj McWil…    2012    41 MIN       34       12.5 F-C      33   879
+ 6 beviltu01w Tully Bev…    2012    39 SAS       34        6.6 G        28   157
+ 7 mcwilta01w Taj McWil…    2011    40 MIN       34       10.4 F-C      34   966
+ 8 swoopsh01w Sheryl Sw…    2011    40 TUL       34      -16.9 F-G      33   879
+ 9 mcwilta01w Taj McWil…    2010    39 NYL       34        4.3 F-C      34   994
+10 griffyo01w Yolanda G…    2009    39 IND       34        4   C-F       3    41
+11 liebena01w Nancy Lie…    2008    49 DET       34        5.7 G         1     9
+12 edwarte01w Teresa Ed…    2004    39 MIN       34       -1   G-F      34   697
+13 coopecy01w Cynthia C…    2003    40 HOU       34        4.5 G         4   144
+14 gilloje01w Jennifer …    2003    39 LAS       34        2.7 F-C      33   397
+15 jacksta01w Tammy Jac…    2002    39 HOU       32        8.4 F-C       5    69
+# ℹ 18 more variables: MP_pct &lt;chr&gt;, PER &lt;dbl&gt;, TS_pct &lt;dbl&gt;, ThrPAr &lt;dbl&gt;,
+#   FTr &lt;dbl&gt;, ORB_pct &lt;dbl&gt;, TRB_pct &lt;dbl&gt;, AST_pct &lt;dbl&gt;, STL_pct &lt;dbl&gt;,
+#   BLK_pct &lt;dbl&gt;, TOV_pct &lt;dbl&gt;, USG_pct &lt;dbl&gt;, OWS &lt;dbl&gt;, DWS &lt;dbl&gt;,
+#   WS &lt;dbl&gt;, WS40 &lt;dbl&gt;, Composite_Rating &lt;dbl&gt;, Wins_Generated &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization">Data Visualization</h3>
+<p>We can visualize the data using different types of plots. We will look at histograms, barplots, boxplots, and scatterplots. We will use the <code>ggplot2</code> package to create these plots.</p>
+<section id="histogram" class="level4">
+<h4 class="anchored" data-anchor-id="histogram">Histogram</h4>
+<p>Let’s make a histogram of the age variable to see the distribution of ages in the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram of the age variable using ggplot2</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span></span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"blue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogram of Age"</span>, <span class="at">x =</span> <span class="st">"Age"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Once we have an initial histogram, we modify it using some of these strategies :</p>
+<ul>
+<li>We can change the binwidth to see how it affects the shape of the distribution.</li>
+<li>We can change the fill and color of the bars to make it more visually appealing.</li>
+<li>We can add labels and a title to make it easier to understand what the plot is showing.</li>
+</ul>
+<p>Here is another example of a histogram :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> Age)) <span class="sc">+</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">"orange"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogram of Age for WNBA Players over the Years"</span>, <span class="at">x =</span> <span class="st">"Age"</span>, <span class="at">y =</span> <span class="st">"Frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="barplot" class="level4">
+<h4 class="anchored" data-anchor-id="barplot">Barplot</h4>
+<p>Barplots are very similar to histograms. The main difference is that barplots are used for categorical data, while histograms are used for continuous data. We can create a barplot of the number of players by each position (Pos) they play:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a barplot of the number of players in each age group using ggplot2</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> Pos)) <span class="sc">+</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"green"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Barplot of Position"</span>, <span class="at">x =</span> <span class="st">"Pos"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can customize the barplot in the same way we customized the histogram. We can change the fill and color of the bars, add labels and a title, and so on.</p>
+<p>We could also add the amounts to the bars using the <code>geom_text()</code> command like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> Pos)) <span class="sc">+</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"green"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"count"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(count)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Barplot of Position with Counts"</span>, <span class="at">x =</span> <span class="st">"Pos"</span>, <span class="at">y =</span> <span class="st">"Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="boxplot" class="level4">
+<h4 class="anchored" data-anchor-id="boxplot">Boxplot</h4>
+<p>A boxplot is a graphical representation of the 5-number summary. It shows the minimum, first quartile, median, third quartile, and maximum values of the data. We can create a boxplot of the age variable like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">y =</span> Age)) <span class="sc">+</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"purple"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Age"</span>, <span class="at">y =</span> <span class="st">"Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This can be customized by</p>
+<ul>
+<li>changing the color of the box</li>
+<li>adding labels and a title</li>
+<li>changing the color of outliers</li>
+<li>adding a jitter strip to show the individual data points</li>
+<li>flip the boxplot to make it horizontal</li>
+<li>change the alpha of the jitter points to make them more transparent</li>
+</ul>
+<p>Here is an example of a customized boxplot :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>,<span class="at">y =</span> Age)) <span class="sc">+</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"purple"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">outlier.color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Age with Jitter"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Age"</span>) <span class="sc">+</span></span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice that the <code>coord_flip()</code> command is used to flip the boxplot to make it horizontal.</p>
+<p>We could have also achieved this by switching the x and y aesthetics like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> <span class="st">""</span>)) <span class="sc">+</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"purple"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">outlier.color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Age with Jitter"</span>, <span class="at">x =</span> <span class="st">"Age"</span>, <span class="at">y =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We could also break Age up by the different teams. This would lead to a boxplot of age by team. We can do this by changing the x aesthetic to Team (Tm) like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> Tm, <span class="at">y =</span> Age)) <span class="sc">+</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"purple"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">outlier.color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Age by Team with Jitter"</span>, <span class="at">x =</span> <span class="st">"Team"</span>, <span class="at">y =</span> <span class="st">"Age"</span>) <span class="sc">+</span></span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This is a tad confusing since there are so many teams. Let’s just compare the Los Angeles Sparks (LAA) and the Minnesota Lynx (MIN) like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Tm <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"LAS"</span>, <span class="st">"MIN"</span>)), <span class="fu">aes</span>(<span class="at">x =</span> Tm, <span class="at">y =</span> Age)) <span class="sc">+</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"purple"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">outlier.color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Age by Team with Jitter"</span>, <span class="at">x =</span> <span class="st">"Team"</span>, <span class="at">y =</span> <span class="st">"Age"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Let’s have some fun and customize the charts to match the colors of the teams. The Sparks use purple (#702F8A) and gold (#FFC72C) while the Lynx use navy (#0C2340) and aurora green (#78BE20).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the LAS boxplot be filled with purple and the jitter strip be </span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="co"># filled with gold. Make the MIN boxplot be filled with navy and the </span></span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="co"># jitter strip be filled with aurora green.</span></span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Tm <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"LAS"</span>, <span class="st">"MIN"</span>)), <span class="fu">aes</span>(<span class="at">x =</span> Tm, <span class="at">y =</span> Age)) <span class="sc">+</span></span>
+<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Tm), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">outlier.color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="fu">aes</span>(<span class="at">color =</span> Tm), <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"LAS"</span> <span class="ot">=</span> <span class="st">"#702F8A"</span>, <span class="st">"MIN"</span> <span class="ot">=</span> <span class="st">"#0C2340"</span>)) <span class="sc">+</span></span>
+<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"LAS"</span> <span class="ot">=</span> <span class="st">"#FFC72C"</span>, <span class="st">"MIN"</span> <span class="ot">=</span> <span class="st">"#78BE20"</span>)) <span class="sc">+</span></span>
+<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Age by Team with Jitter"</span>, <span class="at">x =</span> <span class="st">"Team"</span>, <span class="at">y =</span> <span class="st">"Age"</span>) <span class="sc">+</span></span>
+<span id="cb97-11"><a href="#cb97-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="scatterplot" class="level4">
+<h4 class="anchored" data-anchor-id="scatterplot">Scatterplot</h4>
+<p>Finally, we can create a scatterplot to show the relationship between two quantitative variables. For example, we can create a scatterplot of age and minutes played (MP) like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> MP)) <span class="sc">+</span></span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Scatterplot of Age vs Minutes Played"</span>, <span class="at">x =</span> <span class="st">"Age"</span>, <span class="at">y =</span> <span class="st">"Minutes Played"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This looks like a bunch of columns because the Age variable is discrete.</p>
+<p>We could also compare minute played (MP) to wins genreated (Wins_Generated) like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wnba_data, <span class="fu">aes</span>(<span class="at">x =</span> MP, <span class="at">y =</span> Wins_Generated)) <span class="sc">+</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Scatterplot of Minutes Played vs Wins Generated"</span>, <span class="at">x =</span> <span class="st">"Minutes Played"</span>, <span class="at">y =</span> <span class="st">"Wins Generated"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Data_1004_Winter_2006_Test_2_Review_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="practice-problems" class="level2">
+<h2 class="anchored" data-anchor-id="practice-problems">Practice Problems</h2>
+<section id="mean-median-practice" class="level3">
+<h3 class="anchored" data-anchor-id="mean-median-practice">Mean, Median Practice</h3>
+<ol type="1">
+<li>Using the WNBA dataset, calculate the mean and median of the Offensive Rebound Percentage (ORB_pct) variable. What does it mean if the mean and median have different values?</li>
+</ol>
+<div class="hint" data-exercise="practice_1">
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Think this through one step at a time.</p>
+<ol type="1">
+<li>Did you get an <code>NA</code> value when you tried to calculate the mean and median? If so, why do you think that is?</li>
+<li>What argument can you add to the <code>mean()</code> and <code>median()</code> commands to ignore the missing values and calculate the mean and median of the ORB_pct variable?</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="hint" data-exercise="practice_1">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Solution</strong></p>
+<pre><code>
+mean_orb_pct &lt;- mean(wnba_data$ORB_pct, na.rm = TRUE)
+
+median_orb_pct &lt;- median(wnba_data$ORB_pct, na.rm = TRUE)
+
+mean_orb_pct
+
+median_orb_pct
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="number-summary-and-outlier-practice" class="level3">
+<h3 class="anchored" data-anchor-id="number-summary-and-outlier-practice">5-Number summary and Outlier Practice</h3>
+<ol start="2" type="1">
+<li>Calculate the 5-Number summary of the Offensive Rebound Percentage (ORB_pct) variable. Are there any outliers in this variable? Use the 1.5*IQR rule to determine if there are any outliers.</li>
+</ol>
+<div class="hint" data-exercise="practice_2">
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Use the <code>fivenum</code> command to calculate the 5-number summary of the ORB_pct variable.</li>
+<li>Use Q1 and Q3 to calculate the IQR (Interquartile Range) which is Q3 - Q1. These are in spots 2 and 4 from the <code>fivenum</code> command.</li>
+<li>Use Q1 and the IQR to calculate the lower bound which is Q1 - 1.5*IQR</li>
+<li>Use Q3 and the IQR to calculate the upper bound which is Q3 + 1.5*IQR</li>
+<li>Identify any values that are less than the lower bound or greater than the upper bound.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="hint" data-exercise="practice_2">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Solution</strong></p>
+<pre><code>
+# Determine if there are any outliers in the ORB_pct variable.
+
+Num_Summary &lt;- fivenum(wnba_data$ORB_pct)
+
+Num_Summary
+
+IQR_ORB_pct &lt;- Num_Summary[4] - Num_Summary[2]
+
+IQR_ORB_pct
+
+Lower_Bound &lt;- Num_Summary[2] - 1.5*IQR_ORB_pct
+
+Lower_Bound
+
+Upper_Bound &lt;- Num_Summary[4] + 1.5*IQR_ORB_pct
+
+Upper_Bound
+
+Outliers_ORB_pct &lt;- wnba_data %&gt;%
+  filter(ORB_pct &lt; Lower_Bound | ORB_pct &gt; Upper_Bound)
+
+Outliers_ORB_pct
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="variance-and-standard-deviation-practice" class="level3">
+<h3 class="anchored" data-anchor-id="variance-and-standard-deviation-practice">Variance and Standard Deviation Practice</h3>
+<ol start="3" type="1">
+<li>Calculate the variance and standard deviation of the Offensive Rebound Percentage (ORB_pct) variable. Interpret these values.</li>
+</ol>
+<div class="hint" data-exercise="practice_3">
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>What commands can you use to calculate the variance and standard deviation of the ORB_pct variable?</li>
+<li>What argument can you add to these commands to ignore the missing values and calculate the variance and standard deviation?</li>
+<li>Interpret the variance and standard deviation values that you calculated.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="hint" data-exercise="practice_3">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Solution</strong></p>
+<pre><code>
+# Calculate the variance and standard deviation of the ORB_pct variable and save the results to variables called orb_pct_variance and orb_pct_sd
+
+orb_pct_variance &lt;- var(wnba_data$ORB_pct, na.rm = TRUE)
+
+orb_pct_sd &lt;- sd(wnba_data$ORB_pct, na.rm = TRUE)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="histogram-practice" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-practice">Histogram Practice</h3>
+<ol start="4" type="1">
+<li>Create 2 histograms of the Offensive Rebound Percentage (ORB_pct) variable. Customize the histogram by changing the binwidth, fill color, and adding labels and a title to create the two visualizations.</li>
+</ol>
+<div class="hint" data-exercise="practice_4">
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Think about the different layers you can add to a ggplot to customize it. You can change the binwidth, fill color, and add labels and a title to make it more visually appealing.</li>
+<li>OK, this isn’t much of a hint. Just try it out and see what you can come up with. You can always go back and modify it to make it better.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="hint" data-exercise="practice_4">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Solution</strong></p>
+<pre><code>
+# Here is the first histogram : 
+
+wnba_data %&gt;%
+  ggplot(aes(x = ORB_pct)) +
+  geom_histogram(binwidth = 1, fill = "blue", color = "black") +
+  labs(title = "Histogram of Offensive Rebound Percentage", x = "Offensive Rebound Percentage", y = "Frequency")
+  
+# Here is a second histogram with different customizations :
+
+wnba_data %&gt;%
+  ggplot(aes(x = ORB_pct)) +
+  geom_histogram(binwidth = 2, fill = "orange", color = "blue") +
+  labs(title = "Histogram of Offensive Rebound Percentage for WNBA Players over the Years", x = "Offensive Rebound Percentage", y = "Frequency")
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="barplot-practice" class="level3">
+<h3 class="anchored" data-anchor-id="barplot-practice">Barplot Practice</h3>
+<ol start="5" type="1">
+<li>Create a Barplot of the number of players by year (year_ID). Customize the barplot by changing the fill color, adding labels and a title, and adding the counts to the bars.</li>
+</ol>
+<div class="hint" data-exercise="practice_5">
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Start by creating a basic barplot of the number of players by year using ggplot2. The x-axis should be the year_ID variable and the y-axis should be the count of players.</li>
+<li>Customize the barplot by changing the fill color of the bars, adding labels to the axes, and adding a title to the plot.</li>
+<li>To add the counts to the bars, you can use the <code>geom_text()</code> command with the <code>stat = "count"</code> argument to calculate the counts for each bar and display them on top of the bars. You can use the <code>after_stat(count)</code> function to get the count values and use the <code>vjust</code> argument to adjust the vertical position of the text labels.</li>
+<li>Add labels using the <code>labs()</code> command to make it clearer what the plot is showing. You can add a title, x-axis label, and y-axis label to make it more informative.</li>
+<li>Experiment with different customizations to make the barplot more visually appealing and informative. You can change the fill color, add a different title, or adjust the axis labels to make it clearer what the plot is showing.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="hint" data-exercise="practice_5">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Solution</strong></p>
+<pre><code>
+# Create a Barplot of the number of players by year (year_ID). Customize the barplot by changing the fill color, adding labels and a title, and adding the counts to the bars.
+
+wnba_data %&gt;%
+  ggplot(aes(x = year_ID)) +
+  geom_bar(fill = "green", color = "black") +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = -0.5) +
+  labs(title = "Barplot of Number of Players by Year", x = "Year", y = "Count")
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="boxplot-practice" class="level3">
+<h3 class="anchored" data-anchor-id="boxplot-practice">Boxplot Practice</h3>
+<ol start="6" type="1">
+<li>Going back to the Offensive rebounding percentage, create a BoxPlot of the 5-Number Summary. Customize the boxplot by changing the color of the box, adding labels and a title, changing the color of outliers, adding a jitter strip to show the individual data points, flipping the boxplot to make it horizontal, and changing the alpha of the jitter points to make them more transparent.</li>
+</ol>
+<div class="hint" data-exercise="practice_6">
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>For the barplot, we want the y-axis to be ORB_pct and the x-axis to be a blank variable since we just want one boxplot for the whole dataset. We can create a blank variable by using <code>x = ""</code> in the aesthetics of ggplot.</li>
+<li>We can change the color of the box using the <code>fill</code> argument in the <code>geom_boxplot()</code> command. We can change the color of the outline of the box using the <code>color</code> argument in the <code>geom_boxplot()</code> command. We can change the color of the outliers using the <code>outlier.color</code> argument in the <code>geom_boxplot()</code> command.</li>
+<li>We can add labels and a title using the <code>labs()</code> command.</li>
+<li>We can add a jitter strip to show the individual data points using the <code>geom_jitter()</code> command. We can adjust the width of the jitter points using the <code>width</code> argument in the <code>geom_jitter()</code> command. We can adjust the transparency of the jitter points using the <code>alpha</code> argument in the <code>geom_jitter()</code> command.</li>
+<li>We can flip the boxplot to make it horizontal using the <code>coord_flip()</code> command</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="hint" data-exercise="practice_6">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Solution</strong></p>
+<pre><code>
+wnba_data %&gt;%
+  ggplot(aes(x = "", y = ORB_pct)) +
+  geom_boxplot(fill = "purple", color = "black", outlier.color = "red") +
+  geom_jitter(width = 0.2, alpha = 0.5) +
+  labs(title = "Boxplot of Offensive Rebound Percentage with Jitter", x = "", y = "Offensive Rebound Percentage") +
+  coord_flip()
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="scatterplot-practice" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot-practice">Scatterplot Practice</h3>
+<ol start="7" type="1">
+<li>Create a scatterplot that shows the relationship between assist percentage (AST_pct) and steal percentage (STL_pct). Customize the scatterplot by changing the color and transparency of the points, and adding labels and a title to the plot. Change the color of the points by the team (Tm) variable.</li>
+</ol>
+<div class="hint" data-exercise="practice_7">
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Let the x-axis be the assist percentage (AST_pct) variable and the y-axis be the steal percentage (STL_pct) variable.</li>
+<li>Change the color of the points by the team (Tm) variable by using <code>color = Tm</code> in the aesthetics of ggplot.</li>
+<li>Adjust the transparency of the points using the <code>alpha</code> argument in the <code>geom_point</code> command.</li>
+<li>Add labels and a title to the plot using the <code>labs()</code> command to make it more informative and easier to understand what the plot is showing.</li>
+<li>Remove the legend since it will be too cluttered with all the different teams. You can do this by using <code>theme(legend.position = "none")</code> in your ggplot code.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="hint" data-exercise="practice_7">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Solution</strong></p>
+<pre><code>wnba_data %&gt;%
+  ggplot(aes(x = AST_pct, y = STL_pct, color = Tm)) +
+  geom_point(alpha = 0.5) +
+  labs(title = "Scatterplot of Assist Percentage vs Steal Percentage", x = "Assist Percentage", y = "Steal Percentage") +
+  theme(legend.position = "none")
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
